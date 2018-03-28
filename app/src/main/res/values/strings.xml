@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">McpPictureSelect</string>
+    <string name="button_preview">预览</string>
+    <string name="button_apply">使用</string>
+    <string name="empty_text">没有媒体文件</string>
+    <string name="album_name_all">全部</string>
 </resources>
