@@ -139,7 +139,7 @@ public class AlbumsLoader extends CursorLoader {
         }
         matrixCursor.addRow(new String[]{Album.ALBUM_ALL_ID, allAlbumCoverPath, Album.ALBUM_ALL_ID, Album.ALBUM_ALL_NAME, String.valueOf(totalCount)});
 
-        return new MergeCursor(new Cursor[]{cursor, matrixCursor});
+        return new MergeCursor(new Cursor[]{matrixCursor, cursor});
     }
 
 

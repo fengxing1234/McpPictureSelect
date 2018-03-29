@@ -9,4 +9,5 @@
     <attr name="album.emptyView.textColor" format="reference|color"/>
     <attr name="album.dropdown.title.color" format="reference|color"/>
     <attr name="album.dropdown.count.color" format="reference|color"/>
+    <attr name="listPopupWindowStyle" format="reference"/>
 </resources>

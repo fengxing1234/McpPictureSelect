@@ -14,6 +14,11 @@
         <item name="album.emptyView.textColor">@color/album_empty_view</item>
         <item name="album.dropdown.title.color">@color/album_dropdown_title_text</item>
         <item name="album.dropdown.count.color">@color/album_dropdown_count_text</item>
+        <item name="listPopupWindowStyle">@style/ListPopup</item>
+    </style>
+
+    <style name="ListPopup" parent="Widget.AppCompat.Light.ListPopupWindow">
+        <item name="android:popupBackground">@color/album_popup_bg</item>
     </style>
 
 </resources>

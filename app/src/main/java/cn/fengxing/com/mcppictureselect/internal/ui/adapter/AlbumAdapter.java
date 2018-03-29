@@ -2,13 +2,18 @@ package cn.fengxing.com.mcppictureselect.internal.ui.adapter;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
+
 import cn.fengxing.com.mcppictureselect.R;
+import cn.fengxing.com.mcppictureselect.engine.impl.GlideEngine;
 import cn.fengxing.com.mcppictureselect.internal.entity.Album;
 
 /**
@@ -32,7 +37,8 @@ public class AlbumAdapter extends CursorAdapter {
         Album album = Album.valueOf(cursor);
         ((TextView) view.findViewById(R.id.album_name)).setText(album.getDisplayName(context));
         ((TextView) view.findViewById(R.id.album_media_count)).setText(String.valueOf(album.getCount()));
+        ImageView imageView = (ImageView) view.findViewById(R.id.album_cover);
 
-
+        new GlideEngine().loadThumbnailForUri(context, Uri.fromFile(new File(album.getCoverPath())), context.getResources().getDimensionPixelSize(R.dimen.media_grid_size), context.getResources().getDrawable(R.mipmap.ic_launcher), imageView);
     }
 }

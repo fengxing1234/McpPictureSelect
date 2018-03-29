@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import cn.fengxing.com.mcppictureselect.internal.model.AlbumCollection;
 import cn.fengxing.com.mcppictureselect.internal.ui.adapter.AlbumAdapter;
+import cn.fengxing.com.mcppictureselect.internal.ui.widget.AlbumSpinner;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AlbumCollection.AlbumCallBack {
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private AlbumCollection mAlbumCollection = new AlbumCollection();
     private AlbumAdapter mAlbumAdapter;
+    private AlbumSpinner mAlbumSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +61,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAlbumCollection.onCreate(this, this);
 
-        mAlbumAdapter = new AlbumAdapter(this, null, false);
 
+        mAlbumAdapter = new AlbumAdapter(this, null, false);
+        mAlbumSpinner = new AlbumSpinner(this, findViewById(R.id.toolbar));
+        mAlbumSpinner.setSelectTextView((TextView) findViewById(R.id.select_album));
+        mAlbumSpinner.setAdapter(mAlbumAdapter);
         mAlbumCollection.loadAlbums();
     }
 
